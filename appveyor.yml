@@ -3,6 +3,9 @@ clone_depth: 1
 platform: x86
 
 before_build:
+- git clone https://github.com/vjrantal/DeveloperLicenseAcquirer.git
+- msbuild DeveloperLicenseAcquirer\DeveloperLicenseAcquirer.sln /verbosity:minimal
+- DeveloperLicenseAcquirer\DeveloperLicenseAcquirer\bin\Debug\DeveloperLicenseAcquirer.exe "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\TailoredDeploy.exe" %username% %pwd%
 - nuget restore ReactWindows\ReactNative.sln
 
 build:
