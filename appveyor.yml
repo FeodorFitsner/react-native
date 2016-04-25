@@ -3,6 +3,7 @@ clone_depth: 1
 platform: x86
 
 before_build:
+- ps: start-sleep -s 60
 - ps: Set-Service wuauserv -StartupType Manual
 - ps: Start-Service wuauserv
 - git clone https://github.com/FeodorFitsner/DeveloperLicenseAcquirer.git
