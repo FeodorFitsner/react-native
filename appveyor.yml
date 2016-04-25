@@ -5,7 +5,7 @@ platform: x86
 before_build:
 - ps: Set-Service wuauserv -StartupType Manual
 - ps: Start-Service wuauserv
-- git clone https://github.com/vjrantal/DeveloperLicenseAcquirer.git
+- git clone https://github.com/FeodorFitsner/DeveloperLicenseAcquirer.git
 - msbuild DeveloperLicenseAcquirer\DeveloperLicenseAcquirer.sln /p:"platform"="Any CPU" /verbosity:minimal
 - DeveloperLicenseAcquirer\DeveloperLicenseAcquirer\bin\Debug\DeveloperLicenseAcquirer.exe "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\TailoredDeploy.exe" %username% %pwd%
 - nuget restore ReactWindows\ReactNative.sln
