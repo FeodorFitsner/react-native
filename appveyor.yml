@@ -7,6 +7,8 @@ before_build:
 
 build:
   project: ReactWindows\ReactNative.sln
-  
+  verbosity: minimal
+
 test_script:
+- ps: Import-PfxCertificate -CertStoreLocation cert:\LocalMachine\CA -FilePath .\ReactWindows\ReactNative.Tests\AppPackages\ReactNative.Tests_1.0.0.0_x86_Debug_Test\ReactNative.Tests_1.0.0.0_x86_Debug.cer
 - dir ReactWindows\ReactNative.Tests\AppPackages\ReactNative.Tests_1.0.0.0_x86_Debug_Test
