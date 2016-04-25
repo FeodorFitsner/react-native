@@ -1,0 +1,10 @@
+platform: x86
+
+before_build:
+- nuget restore ReactWindows\ReactNative.sln
+
+build:
+  project: ReactWindows\ReactNative.sln
+  
+test_script:
+- dir ReactWindows\ReactNative.Tests\AppPackages\ReactNative.Tests_1.0.0.0_x86_Debug_Test
